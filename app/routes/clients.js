@@ -53,17 +53,27 @@ router.get( '/clients', [
 *   post:
 *     tags:
 *       - Clients
-*     description: Creates a client
+*     description: Creates new client item
 *     produces:
 *       - application/json
 *     parameters:
-*       - name: email
+*       - name: Request payload
 *         description: Client object
 *         in:  body
 *         required: true
-*         type: string
+*         type: Object
 *         schema:
-*           $ref: '#/definitions/Clients'
+*            properties:
+*              name:
+*                type: string
+*              email:
+*                type: string
+*              phone:
+*                type: string
+*              providers:
+*                type:  array
+*                items:
+*                    type: string
 *     responses:
 *       200:
 *         description: clients
@@ -78,21 +88,32 @@ router.post( '/clients', ClientsHandler.save )
 *   put:
 *     tags:
 *       - Clients
-*     description: Creates a client
+*     description: Updates a client item
 *     produces:
 *       - application/json
 *     parameters:
 *       - name: id
-*         description: Client object
+*         description: Client _id
 *         in:  path
+*         type: String
 *         required: true
-*       - name: email
+*       - name: Request payload
 *         description: Client object
 *         in:  body
 *         required: true
-*         type: string
+*         type: Object
 *         schema:
-*           $ref: '#/definitions/Clients'
+*            properties:
+*              name:
+*                type: string
+*              email:
+*                type: string
+*              phone:
+*                type: string
+*              providers:
+*                type:  array
+*                items:
+*                    type: string
 *     responses:
 *       200:
 *         description: clients
@@ -107,12 +128,12 @@ router.put( '/clients/:_id', ClientsHandler.update )
 *   delete:
 *     tags:
 *       - Clients
-*     description: Remove a client
+*     description: Removes a client
 *     produces:
 *       - application/json
 *     parameters:
 *       - name: id
-*         description: Client object
+*         description: Client _id
 *         in:  path
 *         required: true
 *     responses:

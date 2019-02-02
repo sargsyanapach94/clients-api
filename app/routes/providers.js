@@ -57,13 +57,15 @@ router.get( '/providers', [
  *     produces:
  *       - application/json
  *     parameters:
- *       - name: name
+ *       - name: Request payload
  *         description: Provider object
  *         in:  body
  *         required: true
- *         type: string
+ *         type: Object
  *         schema:
- *           $ref: '#/definitions/Providers'
+ *            properties:
+ *              name:
+ *                type: string
  *     responses:
  *       200:
  *         description: providers
@@ -72,28 +74,29 @@ router.get( '/providers', [
  */
 router.post( '/providers', ProvidersHandler.save )
 
-
 /**
 * @swagger
 * /providers/{id}:
 *   put:
 *     tags:
 *       - Providers
-*     description: Creates a provider
+*     description: Updates a provider item
 *     produces:
 *       - application/json
 *     parameters:
 *       - name: id
-*         description: Provider object
+*         description: Provider _id
 *         in:  path
 *         required: true
-*       - name: email
+*       - name: Request payload
 *         description: Provider object
 *         in:  body
 *         required: true
-*         type: string
+*         type: Object
 *         schema:
-*           $ref: '#/definitions/Providers'
+*            properties:
+*              name:
+*                type: string
 *     responses:
 *       200:
 *         description: provider
@@ -113,7 +116,7 @@ router.put( '/providers/:_id', ProvidersHandler.update )
  *       - application/json
  *     parameters:
  *       - name: id
- *         description: Provider object
+ *         description: Provider _id
  *         in:  path
  *         required: true
  *     responses:

@@ -3,30 +3,37 @@
  * definition:
  *   Clients:
  *     properties:
+ *       _id:
+ *         # Returned by GET, not used in POST/PUT/PATCH
+ *         type: string
+ *         readOnly: true
  *       name:
  *         type: string
+ *         required: true
  *       email:
  *         type: string
+ *         required: true
  *       phone:
  *         type: string
  *       providers:
  *         type:  array
  *         items:
  *             $ref: '#/definitions/Providers'
- *       _id:
- *         type: string
  *       updated:
  *         type: date
  *       created:
  *         type: date
  *   Providers:
  *     properties:
+ *       _id:
+ *         # Returned by GET, not used in POST/PUT/PATCH
+ *         type: string
+ *         readOnly: true
  *       name:
  *         type: string
- *       _id:
- *         type: string
+ *         required: true
  *       updated:
- *         type: Date
+ *         type: date
  *       created:
- *         type: Date
+ *         type: date
  */

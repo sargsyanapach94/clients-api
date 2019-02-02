@@ -9,9 +9,9 @@ import swaggerJSDoc from 'swagger-jsdoc';
 const app = express(); // new server
 const swaggerDefinition = {
     info: {
-        title: 'Express swagger api',
+        title: 'Clients api',
         version: '1.0.0',
-        description: 'API documentation for Express swagger'
+        description: 'API documentation for Clinets and Providers'
     },
     host: 'localhost:3000',
     basePath: '/api'
