@@ -1,4 +1,4 @@
-# express-swagger-boilerplate
+# express-swagger
 > Express with swagger
 
 ## Get Started
@@ -10,7 +10,7 @@ npm install
 # Start your mongodb server instance
 mongod
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:3000/api
 npm run dev
 ```
 
